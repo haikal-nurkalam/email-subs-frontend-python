@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Email Subs Backend Python
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created this project for email automation using Python, React, Tailwind, and Supabase. You can find the Frontend here: [Email Subs Frontend Repo](https://github.com/haikal-nurkalam/email-subs-frontend-python.git)
 
-## Available Scripts
+## Demo
+Try the demo app here: [email.heykals.com](https://email.heykals.com/). Make sure to use your email.
 
-In the project directory, you can run:
+## Why I Chose These Stacks
+- **Python**: I can integrate it faster with Supabase, the code is cleaner, and I challenged myself to integrate Supabase with this language.
+- **React**: This is used to build the frontend and to call Supabase. It’s also fast, so I decided to use it for this project.
+- **Tailwind**: I didn’t want to write vanilla CSS, and because I wanted to speed up development, I chose this CSS framework.
+- **Supabase**: Similar to Firebase in functionality. I didn’t want to set up & configure my own backend, so I used Supabase, and it has proven to be reliable and fast.
 
-### `npm start`
+## How to Install this Program
+### Supabase
+First, you need a Supabase account and project.
+You can find it [here](https://supabase.com/docs/guides/getting-started/quickstarts/reactjs).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Below is my table specification:
+- `id`, primary key, `int8`
+- `created_at`, `timestamptz`
+- `nama`, `text`
+- `email`, `text`
+- `no_telp`, `text`
+- `status`, `bool`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can customize it.
 
-### `npm test`
+### Let's Install It
+1. Download my repo.
+2. Navigate to the repository:
+   ```bash
+   cd email-subs-frontend-python
+   ```
+3. Install all packages:
+   ```bash
+   npm i
+   ```
+4. Create an env file:
+   Create a `.env.local` file in the root folder and add your Supabase URL and Supabase Key:
+   ```plaintext
+   REACT_APP_SUPABASE_URL=your_supabase_url
+   REACT_APP_SUPABASE_KEY=your_supabase_key
+   ```
+5. Modify the table name according to your Supabase table:
+   Insert your table name in `Home.jsx` and customize it:
+   ```javascript
+   try {
+      const { data, error } = await supabase
+        .from("your_table_name")
+        .insert([
+          { nama: nama, email: email, no_telp: no_telp, status: false },
+        ]);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+      window.location.reload();
+      setIsLoading(true);
+   }
+   ```
+6. Start your project:
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Thank You
+If you have any questions, feel free to reach out to me on GitHub or LinkedIn. Thank you!
