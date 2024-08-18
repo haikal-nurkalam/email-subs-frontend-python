@@ -1,4 +1,4 @@
-# Email Subs Backend Python
+# Email Subs Frontend Python
 
 I created this project for email automation using Python, React, Tailwind, and Supabase. You can find the Backend here: [Email Subs backend Repo](https://github.com/haikal-nurkalam/email-subs-backend-python.git)
 
